@@ -123,6 +123,9 @@
                                         <rect key="frame" x="0.0" y="516" width="414" height="258"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="WX1-dw-jMf" eventType="touchUpInside" id="1kA-hY-QGr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -138,7 +141,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="WCE-xi-dcC"/>
                     <connections>
-                        <segue destination="SHL-CF-eiT" kind="show" id="nU6-CR-IkI"/>
+                        <outlet property="emailTextField" destination="Juu-gE-DJC" id="qgQ-c5-dox"/>
+                        <outlet property="passwordTextField" destination="xbt-UQ-12B" id="87c-4g-zkS"/>
+                        <segue destination="SHL-CF-eiT" kind="show" identifier="RegisterToChat" id="nU6-CR-IkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5e4-1r-YxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

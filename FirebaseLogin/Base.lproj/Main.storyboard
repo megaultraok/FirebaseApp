@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="2855.072463768116" y="147.99107142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="WMW-fN-0Lu">
             <objects>
-                <viewController id="hoA-ZT-hxV" sceneMemberID="viewController">
+                <viewController id="hoA-ZT-hxV" customClass="LoginViewController" customModule="FirebaseLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Pd-Vc-bnc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,9 @@
                                         <rect key="frame" x="40.5" y="247.5" width="72" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="hoA-ZT-hxV" eventType="touchUpInside" id="aoE-sE-AvF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -91,7 +94,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="eDK-7f-CBS"/>
                     <connections>
-                        <segue destination="SHL-CF-eiT" kind="show" id="OcP-Fn-xCm"/>
+                        <outlet property="emailTextField" destination="69a-rv-74u" id="ebK-B9-EOT"/>
+                        <outlet property="passwordTextField" destination="Ilo-P9-G8c" id="hwU-vO-0uT"/>
+                        <segue destination="SHL-CF-eiT" kind="show" identifier="LoginToChat" id="OcP-Fn-xCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEH-NU-0Ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,7 +191,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nU6-CR-IkI"/>
+        <segue reference="OcP-Fn-xCm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -15,6 +15,7 @@
 		01132EA1260A443A00F5C833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01132E9F260A443A00F5C833 /* LaunchScreen.storyboard */; };
 		01132EAA260A503500F5C833 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01132EA9260A503500F5C833 /* GoogleService-Info.plist */; };
 		01132EC0260A558F00F5C833 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EBF260A558F00F5C833 /* RegisterViewController.swift */; };
+		016CD201260CD18000FFA318 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD200260CD18000FFA318 /* LoginViewController.swift */; };
 		0E0396DFF8A3F8FB58B821A3 /* Pods_FirebaseLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E8C9743C43677204F6E39A /* Pods_FirebaseLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		01132EA2260A443A00F5C833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01132EA9260A503500F5C833 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01132EBF260A558F00F5C833 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		016CD200260CD18000FFA318 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01E8C9743C43677204F6E39A /* Pods_FirebaseLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB559E98EB2CD1F614F8845F /* Pods-FirebaseLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		C9945AD02D9C00D39CBBAF0F /* Pods-FirebaseLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin.release.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				01132EA2260A443A00F5C833 /* Info.plist */,
 				01132EA9260A503500F5C833 /* GoogleService-Info.plist */,
 				01132EBF260A558F00F5C833 /* RegisterViewController.swift */,
+				016CD200260CD18000FFA318 /* LoginViewController.swift */,
 			);
 			path = FirebaseLogin;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				01132E99260A443700F5C833 /* ViewController.swift in Sources */,
 				01132E95260A443700F5C833 /* AppDelegate.swift in Sources */,
 				01132E97260A443700F5C833 /* SceneDelegate.swift in Sources */,
+				016CD201260CD18000FFA318 /* LoginViewController.swift in Sources */,
 				01132EC0260A558F00F5C833 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -177,6 +177,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-M0-FWz">
+                                <rect key="frame" x="80" y="814" width="248" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prc-aI-wqd">
+                                <rect key="frame" x="348" y="814" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="SHL-CF-eiT" eventType="touchUpInside" id="gQQ-Dg-ZSD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FGr-2X-Gag"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -190,6 +204,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="iRk-Hk-ezI" id="cc3-Om-9fb"/>
+                        <outlet property="textField" destination="1Jy-M0-FWz" id="FaS-ts-30t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXG-eo-KlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

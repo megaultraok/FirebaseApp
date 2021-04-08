@@ -15,16 +15,16 @@ import Firebase
 
 class ChatViewController: UIViewController {
 
+    
+    let db = Firestore.firestore()
     @IBOutlet weak var tableView: UITableView!
     
     
     var messages : [Message] = [
     
-        Message(sender: "1@2.com", body: "hi"),
-        Message(sender: "2@1.com", body: "hey")
-    
     ]
    
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,9 +33,166 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         title = "Chat Screen"
         // Do any additional setup after loading the view.
+        loadData()
+    }
+    func loadData() {
+        
+        
+
+               db.collection("NewMessages").order(by: "date").addSnapshotListener { (querySnapshot, error) in
+
+                   
+
+                   
+
+                   self.messages = []
+
+                   if let e = error {
+
+                       print("Unable to retrieve")
+
+                   }
+
+                   
+
+                   else {
+
+                       
+
+                       if let snapshotDocuments = querySnapshot?.documents{
+
+                         
+
+                           for doc in snapshotDocuments {
+
+                               
+
+                               print(doc.data())
+
+                               
+
+                               let data = doc.data()
+
+                               
+
+                               if let messageSender = data["sender"] as? String, let messageBody = data["body"] as? String
+
+                               {
+
+                                   
+
+                                   let newMessage = Message(sender: messageSender, body: messageBody)
+
+                                   
+
+                                   self.messages.append(newMessage)
+
+                                       
+
+                                       
+
+                                   self.tableView.reloadData()
+
+                                       
+
+                                   
+
+                               }
+
+                           }
+
+                       }
+                   }
+
+        
+               }
+        
     }
     
+    
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        
+        
+        if let messagSender = Auth.auth().currentUser?.email,   let messageBody = textField.text
 
+              
+
+           
+
+              {
+
+                  
+
+                  
+
+                  db.collection("NewMessages").addDocument(data: [
+
+
+
+                      "sender" : messagSender,
+
+                      "body" : messageBody,
+
+                      "date" : Date().timeIntervalSince1970
+
+                  
+
+                  
+
+                  ]) { (error) in
+
+                      
+
+                      
+
+                      
+
+                      if let e = error {
+
+                          
+
+                          print("Unsuccessful")
+
+                      }
+
+                      
+
+                      else {
+
+                          
+
+                          print("Successful")
+
+                      }
+
+                      
+
+                  }
+
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+
+              }
+
+              
+
+              
+
+              
+        
+        
+    }
+   
     @IBAction func logoutPressed(_ sender: Any) {
     
    

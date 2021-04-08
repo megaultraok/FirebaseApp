@@ -33,13 +33,16 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         title = "Chat Screen"
         // Do any additional setup after loading the view.
+        
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        
         loadData()
     }
     func loadData() {
         
         
 
-               db.collection("NewMessages").order(by: "date").addSnapshotListener { (querySnapshot, error) in
+               db.collection("New--Messages").order(by: "date").addSnapshotListener { (querySnapshot, error) in
 
                    
 
@@ -126,7 +129,7 @@ class ChatViewController: UIViewController {
 
                   
 
-                  db.collection("NewMessages").addDocument(data: [
+                  db.collection("New--Messages").addDocument(data: [
 
 
 
@@ -221,10 +224,24 @@ extension ChatViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let message = messages[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCell
         
-        cell.textLabel?.text = messages[indexPath.row].body
+        cell.label.text = message.body
+        
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.meImage.isHidden = false
+            cell.youImage.isHidden = true
+        } else {
+            cell.meImage.isHidden = true
+            cell.youImage.isHidden = false
+        }
+        
+        
+        
+        
         return cell
         
         
